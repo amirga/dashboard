@@ -1,29 +1,48 @@
 var Hapi = require('hapi');
-var server = new Hapi.Server('localhost', 5000,{
+var server = new Hapi.Server('localhost', 5000, {
     views: {
-        engines: { html: 'handlebars' },
+        engines: {
+            html: 'ejs'
+        },
         path: __dirname + '/templates'
     }
 });
 
-var handler = function (request, reply) {
+//Routes
+var getAllUsers = function(request, reply) {
+
+};
+
+var getUser = function(request, reply) {
+
+};
+
+var handler = function(request, reply) {
 
     var context = {
-        title: 'Views Example',
+        title: 'Doron',
         message: 'Hello, World'
     };
 
-    reply.view('index', context);
+    return reply.view('index', context);
 };
 
-server.route([
-  {
-    method: 'GET',path: '/public/{path*}',handler: {directory: { path: './public', listing: false, index: true }
-  }},{
-    method: 'GET', path: '/', handler: handler
-  }
-  ]);
+server.route([{
+    method: 'GET',
+    path: '/public/{path*}',
+    handler: {
+        directory: {
+            path: './public',
+            listing: false,
+            index: true
+        }
+    }
+}, {
+    method: 'GET',
+    path: '/',
+    handler: handler
+}]);
 
-server.start(function () {
+server.start(function() {
     console.log('Server started at: ' + server.info.uri);
 });
