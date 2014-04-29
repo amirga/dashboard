@@ -1,0 +1,26 @@
+{
+  "name": "dashboard",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doron2402/dashboard.git"
+  },
+  "keywords": [
+    "express",
+    "dashboard"
+  ],
+  "author": "Doron Segal",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/doron2402/dashboard/issues"
+  },
+  "dependencies": {
+    "hapi": "~4.0.3",
+    "handlebars": "~2.0.0-alpha.2"
+  }
+}
