@@ -9,4 +9,15 @@ Site.home = function(request, reply) {
     return reply.view('index', context);
 };
 
+Site.contact = function(request, reply) {
+    var obj_response = {
+        Error: null,
+        code: 'OK',
+        payload: request.payload ? request.payload : {},
+        params: request.params ? request.params : {},
+        query: request.query ? request.query : {},
+    };
+    reply(obj_response).type('application/json').header('X-Custom', 'some-value');
+};
+
 exports.Site = Site;
