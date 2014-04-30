@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var routes = require('./routes');
 var server = new Hapi.Server('localhost', 5000, {
     views: {
         engines: {
@@ -8,24 +9,6 @@ var server = new Hapi.Server('localhost', 5000, {
     }
 });
 
-//Routes
-var getAllUsers = function(request, reply) {
-
-};
-
-var getUser = function(request, reply) {
-
-};
-
-var handler = function(request, reply) {
-
-    var context = {
-        title: 'Doron',
-        message: 'Hello, World'
-    };
-
-    return reply.view('index', context);
-};
 
 server.route([{
     method: 'GET',
@@ -40,7 +23,7 @@ server.route([{
 }, {
     method: 'GET',
     path: '/',
-    handler: handler
+    handler: routes.Site.home
 }]);
 
 server.start(function() {
