@@ -1,2 +1,2 @@
-module.exports = require('./users');
-module.exports = require('./site');
+exports.Users = require('./users');
+exports.Site = require('./site');

@@ -20,4 +20,4 @@ Site.contact = function(request, reply) {
     reply(obj_response).type('application/json').header('X-Custom', 'some-value');
 };
 
-exports.Site = Site;
+module.exports = Site;
