@@ -31,15 +31,25 @@ server.route(
     },{
       method: 'POST',
       path: '/contact/us',
-      handler: routes.Site.contact
+      config: {
+        handler: routes.Site.contact,
+        validate: {
+            payload: {
+                name: Joi.string().required(),
+                phone: Joi.string().min(9).max(12).regex(/[0-9]/).required(),
+                email: Joi.string().email().required()
+            }
+        }  
+      }
+      
     },{
         method: 'POST',
         path: '/user/add',
         config: {
             handler: routes.Users.add,
             validate: {
-                query: {
-                    username: Joi.string()
+                payload: {
+                    username: Joi.string().required()
                 }
             }    
         }
@@ -51,7 +61,7 @@ server.route(
             handler: routes.Users.update,
             validate: {
                 payload: {
-                    username: Joi.string()
+                    username: Joi.string().required()
                 }
             }    
         }
