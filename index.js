@@ -1,4 +1,6 @@
 global.app = {};
+app.settings = require('./config');
+console.log(app.settings);
 app.lodash = require('lodash');
 app.Hapi = require('hapi');
 app.Joi = require('joi');
@@ -13,7 +15,6 @@ var server = new app.Hapi.Server('localhost', 5000, {
     }
 });
 
-console.log(routes);
 server.route(
     [
     routes.Site.public,
