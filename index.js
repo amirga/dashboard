@@ -21,7 +21,10 @@ server.route(
     routes.Site.home,
     routes.Site.contact,
     routes.Users.add,
-    routes.Users.update
+    routes.Users.update,
+    routes.Users.delete,
+    routes.Users.get,
+    routes.Users.get_by_username
     ]
 );
 
