@@ -26,7 +26,7 @@ Users.add = {
         },
         validate: {
             payload: {
-                username: app.Joi.string().required()
+                username: app.Joi.string().alphanum().min(3).max(30).required()
             }
         }
     }

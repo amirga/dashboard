@@ -1,6 +1,5 @@
 global.app = {};
 app.settings = require('./config');
-console.log(app.settings);
 app.lodash = require('lodash');
 app.Hapi = require('hapi');
 app.Joi = require('joi');
@@ -24,7 +23,12 @@ server.route(
     routes.Users.update,
     routes.Users.delete,
     routes.Users.get,
-    routes.Users.get_by_username
+    routes.Users.get_by_username,
+    routes.Cars.get_location,
+    routes.Cars.post_location,
+    routes.Cars.get_all_routes,//Get all route by sepcific car
+    routes.Cars.get_single_route,//Get specific route by car
+    routes.Cars.get_car
     ]
 );
 

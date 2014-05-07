@@ -15,6 +15,8 @@
     <script src="public/script.js"></script>
     <script src="public/app/category.js"></script>
     <script src="public/app/users.js"></script>
+    <script src="public/app/routes.js"></script>
+
     
     <link rel="stylesheet" href="public/stylesheets/select2.css">
     <script src="public/javascripts/select2.js"></script>
@@ -46,12 +48,17 @@
               <li class="active"><a href="#">Critertion</a></li>
               <li><a href="#">user</a></li>
               <li><a href="#">users</a></li>
+              <li><a href="#">Cars</a></li>
+              <li><a href="#">Routes</a></li>
+              <li><a href="#">Bugs</a></li>
+              <li><a href="#">Notifications</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
 
     </div>
+    <div id="single-view-template"></div>
     <div id="user-render"></div>
     <div id="category-test"></div>
     <div id="test-cont"></div>
@@ -106,7 +113,17 @@
   </ul>
   <div>
 </script>
-
+<!-- Routes -->
+<script type="text/x-handlebars-template" id="RoutesTemplate">
+  <div>
+    <h2>All Routes</h2>
+    <ul>
+    {{#each []}}  
+      <li>routes_id: {{this.id}} , start: {{this.start}}, end: {{this.end}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</script>
   </body>
 
 </html>

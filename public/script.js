@@ -13,6 +13,7 @@ app.clearAllTemplate = function() {
   $('#test-cont').html('');
   $('#select-category').html('');
   $('#user-render').html('');
+  $('#single-view-template').html('');
 };
 
 app.callSpecificView = function(args) {
@@ -28,7 +29,20 @@ app.callSpecificView = function(args) {
     case 'users':
       app.initUsers();
       break;
+    case 'routes':
+      app.initRoutes();
+      break;
   }
+};
+
+app.initRoutes = function(){
+  console.log('init routes');
+  console.log(app.CarRoutes);
+  var car_routes = new app.CarRoutes();
+  var car_routes_view = new app.CarRoutesView({
+    collection: car_routes
+  });
+  car_routes_view.render();
 };
 
 app.initUsers = function() {
