@@ -23,7 +23,7 @@ $(function( ){
   // Routes View
   app.CarRoutesView = Backbone.View.extend({
     render: function() {
-      console.log('redner users view...');
+      console.log('redner routes view...');
       var source = $('#RoutesTemplate').html();
       var template = Handlebars.compile(source);
       var html = template(this.collection.toJSON());
