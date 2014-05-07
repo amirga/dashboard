@@ -37,10 +37,10 @@ app.callSpecificView = function(args) {
 
 app.initRoutes = function(){
   console.log('init routes');
-  console.log(app.CarRoutes);
-  var car_routes = new app.CarRoutes();
-  var car_routes_view = new app.CarRoutesView({
-    collection: car_routes
+  console.log(app);
+  var car_route = new app.CarRoutes({id:1});
+  var car_routes_view = new app.CarRouteView({
+    model: car_route
   });
   car_routes_view.render();
 };

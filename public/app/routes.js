@@ -1,18 +1,13 @@
 $(function( ){
   //Route Model
   app.CarRoute = Backbone.Model.extend({
-    urlRoot: '/cars/routes/all',
-    default: {
-      route_id: 100,
-      start: '200',
-      end: '300'
-    }
+    urlRoot: '/cars/routes/'
   });
 
   //Routes Collection
   app.CarRoutes = Backbone.Collection.extend({
-    model: Route,
-    url: '/cars/routes/all'
+    model: app.CarRoute,
+    url: '/cars/routes/'
   });
 
   //Route View
@@ -33,9 +28,6 @@ $(function( ){
       var template = Handlebars.compile(source);
       var html = template(this.collection.toJSON());
       $('#single-view-template').html(html);
-    },
-    initialize: function(){
-      this.collection.on('add', this.render, this)
     }
   });
 });
